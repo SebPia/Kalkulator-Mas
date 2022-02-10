@@ -32,8 +32,8 @@ There is possibility to add new lists with infinity amount of elements.
 ## Installation 
  - Clone repo
  - Open project and split terminals. 
- -In first terminal type: **cd backend** then **npm install** then **npm run dev**. 
- -In second terminal type: **cd frontend** then ** npm install ** then ** npm start ** 
+ - In first terminal type: **cd backend** then **npm install** then **npm run dev**. 
+ - In second terminal type: **cd frontend** then ** npm install ** then ** npm start ** 
 
 #### NOTE ####
 ** in .env file i set link to my test mongodb. It will be deleted when i'll finish app ** 
