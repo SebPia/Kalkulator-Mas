@@ -7,17 +7,17 @@
 ## Description
 The application was created to help in the price of welding and painting orders. 
 There is possibility to add new lists with infinity amount of elements.
-**Applicattion is not finished yet** The code may not look very clean, beacose i write it in "freestyle" mode.
+**Applicattion is not finished yet** The code may not look very clean, beacose i write it in "freestyle" mode. After finish I'll clean up the mess
 
-##Technology
+## Technology
 
-###FrontEnd
+### FrontEnd
 - React
 - Redux (First time using in any project)
 - Scss 
 - axios
 
-###Backend
+### Backend
 - MongoDB
 - Express
 - Node.js
@@ -32,8 +32,8 @@ There is possibility to add new lists with infinity amount of elements.
 ## Installation 
  - Clone repo
  - Open project and split terminals. 
- -In first terminal type: **cd backend** then **npm install** then **npm run dev**. 
- -In second terminal type: **cd frontend** then ** npm install ** then ** npm start ** 
+ - In first terminal type: **cd backend** then **npm install** then **npm run dev**. 
+ - In second terminal type: **cd frontend** then **npm install** then  **npm start** 
 
 #### NOTE ####
 ** in .env file i set link to my test mongodb. It will be deleted when i'll finish app ** 
