@@ -1,0 +1,26 @@
+*, *::before, *::after{
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+}
+
+
+
+body{
+   background-color: #3E3E3E;
+   overflow:hidden;
+}
+
+#root{
+   display:flex;
+}
+
+
+*{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+*::-webkit-scrollbar {
+   display: none;
+ }

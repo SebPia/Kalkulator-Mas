@@ -1,0 +1,273 @@
+.kalkulatorPage_main{
+   position:relative;
+   left:0vw; top:10vh;
+   width: 70vw;
+   margin:20px;
+
+
+   .KalkulatorMenu{
+      display:flex;
+      position:relative;
+      color:white;
+         li{
+            width:25%;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:10px 0px;
+
+            figure{
+               text-align: center;
+
+               img{
+                  transform:scale(0.6)
+               }
+               figcaption{
+                  margin-bottom:10px;
+               }
+            }
+
+         }
+
+
+         li:hover{
+            background-color: rgb(175, 175, 185);
+         }
+
+
+         .active{
+            background-color: #272727;
+            border-radius: 10px 10px 0px 0px;
+         }
+   }
+
+
+
+
+   #Kalkulator-Container{
+      background-color: #272727;
+      padding:40px;
+      min-height: 66vh;
+      border-radius: 0px 0px 10px 10px;
+      display:flex;
+      align-items: center;
+      justify-content: space-around;
+
+      
+      form{
+         display:flex;
+         flex-direction: column;
+         align-items: center;
+         padding:20px;
+         
+         input{
+            border:none;
+            border-bottom:1px solid #0085FF;
+            background-color: transparent;
+            color:white;
+            padding:10px;
+            width:350px;
+         }
+
+         
+         input[type="submit"]{
+            background-color: #0085FF;
+            width:max-content;
+            border-radius:4px;
+            margin-top:15px;
+            padding: 10px 30px;
+            border:1px solid white;
+         }
+      }
+   }
+}
+
+
+
+aside{
+   border-left: 1px solid #0085FF;
+   height:100vh;
+   left:3vw;
+   width:25vw;
+   padding:30px;
+   position:relative;
+   color:white;
+   
+   section{
+      display:flex;
+      flex-direction: column;
+   }
+   header{
+      color:#0085FF;
+      text-align: center;
+      margin:10px 0px;
+   }
+
+   button{
+      background-color: #0085FF;
+      border:1px solid white;
+      color:white;
+      padding:6px 10px;
+      font-size:0.8em;
+      width:100%;
+      border-radius:5px;
+      margin:10px auto;
+   }
+
+   #section_score{
+      border-bottom:1px solid #0085FF;
+      padding: 10px 0px;
+      height:22vh;
+
+      p{
+         margin-top:10px;
+      }
+     select{
+         width:100%;
+         background-color:white;
+         border:none;
+         border-radius:4px;
+         padding:5px 10px;
+         margin:10px auto 0px auto;
+      }
+
+      .msg{
+         text-align:center;
+         font-size:0.8rem;
+         color:#fff;
+         margin-top:5px;
+      }
+   }
+
+
+   #section_lists{
+      max-height:73vh;
+      overflow-y: scroll;
+      position:relative;
+      ol{
+         max-height:20%;
+         overflow-y: scroll;
+         .list{
+            display:flex;
+            flex-direction: column;
+            background-color: #0085FF;
+            border-radius:4px;
+            border-top:1px solid white;   
+            margin-top:7px;
+
+            div{
+               display:flex;
+               justify-content: space-between;
+               align-items: center;
+
+               p, .deleteBTN{
+                  padding:10px
+               }
+               p{
+                  width:100%;
+                  height:100%;
+               }
+               .deleteBTN{
+                  z-index:2;
+                  width:10%;
+                  top:0; right:0;
+                  text-align: center;
+               }
+               .deleteBTN:hover{
+                  background-color: #000000b2;
+               }
+         
+            }
+
+            .hiddenlist{
+               // reset buttonow
+               button{
+                  all:unset;
+               }
+
+               background-color: #616060;
+               list-style: none;
+               color:black;
+               padding:4px;
+               color:white;
+
+               
+
+              li{
+                 padding: 20px 20px;
+                 border-bottom:1px solid white;
+                 margin-top:10px;
+                 background-color: #272727;
+                 .item_header{
+                    all:unset;
+                    display:flex;
+                    align-items: center;
+                    font-size:20px;
+
+                     .item_tittle{
+                        height:100%;
+                        width:calc(100% - 40px);
+                        text-align: center;
+                        font-weight: 1000;
+                     }
+
+                     .item_button{
+                        transform: scale(1);
+                        background-color: transparent;
+                        color:red;
+                        width:30px;
+                        height:30px;
+                        text-align: center;
+                        font-size:20px;
+                  }
+                 }
+
+
+                 .item_stats{
+                    display:flex;
+                    margin:10px 0px;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    margin:20px 0px;
+                    .unit{ color: #0085FF}
+                 }
+
+
+                 .item_counter{
+                     flex-direction: row;
+                     justify-content: center;
+                     align-items: center;
+                     font-size: 20px;
+
+                     button{
+                        position:relative;
+                        color:#0085FF;
+                        width:40px; height:40px;
+                        text-align: center;
+                        margin:0 20px;
+                        cursor:pointer;
+                        
+                     } 
+
+                     .item_amount{
+                        border:1px solid #0085FF;
+                        border-radius:40;
+                        padding:5px 20px; 
+                        border-radius:10px;
+                     }
+                 }
+              }
+            }
+         } 
+      }
+
+      input[type="text"]{
+         margin-top:30px;
+         width:100%;
+         padding:5px 10px;
+         border-radius:4px;
+      }
+   
+   }
+}
