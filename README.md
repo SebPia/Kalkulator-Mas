@@ -7,7 +7,7 @@
 ## Description
 The application was created to help in the price of welding and painting orders. 
 There is possibility to add new lists with infinity amount of elements.
-**Applicattion is not finished yet** The code may not look very clean, beacose i write it in "freestyle" mode.
+**Applicattion is not finished yet** The code may not look very clean, beacose i write it in "freestyle" mode. After finish I'll clean up the mess
 
 ## Technology
 
