@@ -9,15 +9,15 @@ The application was created to help in the price of welding and painting orders.
 There is possibility to add new lists with infinity amount of elements.
 **Applicattion is not finished yet** The code may not look very clean, beacose i write it in "freestyle" mode.
 
-##Technology
+## Technology
 
-###FrontEnd
+### FrontEnd
 - React
 - Redux (First time using in any project)
 - Scss 
 - axios
 
-###Backend
+### Backend
 - MongoDB
 - Express
 - Node.js
