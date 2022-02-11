@@ -1,6 +1,6 @@
 const INIT_STATE = {
    view: 'Profil',
-   itemName: '',
+   itemName: 'Profil',
    weight: 0,
    surface: 0,
    lists: [],

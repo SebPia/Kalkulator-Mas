@@ -9,6 +9,7 @@
 body{
    background-color: #3E3E3E;
    overflow:hidden;
+   color:white;
 }
 
 #root{
@@ -23,4 +24,15 @@ body{
 
 *::-webkit-scrollbar {
    display: none;
- }
+}
+
+button{
+   background-color: #0085FF;
+   border:1px solid white;
+   color:white;
+   padding:6px 10px;
+   font-size:0.8em;
+   width:100%;
+   border-radius:5px;
+   margin:10px auto;
+}

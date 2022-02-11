@@ -5,30 +5,30 @@ import NavBar from '../Components/Navbar.js';
 import Form from '../Components/Form.js';
 import Score from '../Components/Score.js';
 import Lists from '../Components/Lists.js';
+import { useSelector } from 'react-redux';
 
 
 
 
 export default function Kalkulator ()
 {
-
-   const [score, setScore] = useState( { weight: 0, surface: 0 } )
-
+   const weight = useSelector( state => state.kalkulatorPageReducer.weight )
+   console.log( weight )
 
    return (
       <>
          <div className='kalkulatorPage_main'>
-
             <NavBar />
 
             <section id="Kalkulator-Container">
                <Picture />
-               <Form />
+
+               { weight === 0 ? < Form /> : <Score /> }
             </section>
+
          </div >
 
          <aside>
-            <Score />
             <Lists />
          </aside>
       </>

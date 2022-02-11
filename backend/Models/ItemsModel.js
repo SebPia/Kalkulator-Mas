@@ -24,7 +24,7 @@ const ItemSchema = new Mongoose.Schema( {
    },
 
    price: {
-      type: Number
+      type: Number,
    },
 
    amount: {

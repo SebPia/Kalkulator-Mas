@@ -6,7 +6,15 @@ import kalkulatorPageActions from '../Redux/actions/KalkulatorPage';
 export default function ListItem ( { id } )
 {
    const items = useSelector( state => state.kalkulatorPageReducer.activeListItems )
+   console.log( items )
    const dispatch = useDispatch()
+
+
+   const handleDecress = ( e ) =>
+   {
+      console.log( e.target.parentElement.parentElement.id )
+   }
+
 
    useEffect( () =>
    {
@@ -27,8 +35,8 @@ export default function ListItem ( { id } )
       <>
          {
             items.length > 0 ?
-               items.map( ( { _id, name, weight, surface, amount } ) => (
-                  <li key={ _id }>
+               items.map( ( { _id, name, weight, surface, amount, price } ) => (
+                  <li key={ _id } id={ _id }>
                      <header className='item_header'>
                         <p className='item_tittle'>{ name }</p>
                         <nav> <button className="item_button">X</button> </nav>
@@ -46,13 +54,13 @@ export default function ListItem ( { id } )
                         </p>
 
                         <p>
-                           200
+                           { price }
                            <span className='unit'> zł</span>
                         </p>
                      </section>
 
                      <section className='item_counter'>
-                        <button>-</button>
+                        <button onClick={ handleDecress }>-</button>
                         <p className='item_amount'>{ amount }</p>
                         <button>+</button>
                      </section>
