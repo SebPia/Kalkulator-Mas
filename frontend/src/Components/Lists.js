@@ -122,6 +122,7 @@ export default function Lists ()
                   </ol>
                )
          }
+
          <div className='lists_options'>
             <input type="text" placeholder='Nazwa nowej listy' name="name" onChange={ handleInputs } value={ inputs.name } />
             <button onClick={ addList }> Add List</button>

@@ -19,9 +19,9 @@ const itemsController = {
       console.log( 'dodaje item' )
       try
       {
-         const { name, weight, surface } = req.body
+         const { name, weight, surface, price } = req.body
          const list_id = req.params.list
-         const newItem = await new ItemsModel( { name, weight, surface, list_id } )
+         const newItem = await new ItemsModel( { name, weight, surface, list_id, price } )
          await newItem.save()
          res.status( 200 ).json( { msg: "Dodano zadanie do listy" } )
       } catch ( error )
