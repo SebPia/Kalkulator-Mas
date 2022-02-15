@@ -13,11 +13,13 @@ const MathFunctions = {
       const obj2 = obj - obj1;
       const weight = obj2 * Wagi.stal / 1000000
 
+
       // surface
       const bok1 = a * c
       const bok2 = b * c
       const wszystkieBoki = bok1 * 2 + bok2 * 2
       const surface = wszystkieBoki / 100000
+
 
       return { weight, surface, itemName: `Profil ${ a }x${ b }x${ d }` }
 
@@ -36,6 +38,8 @@ const MathFunctions = {
       const bok3 = a * b
       const wszystkieBoki = bok1 * 2 + bok2 * 2 + bok3 * 2
       const surface = wszystkieBoki / 100000
+
+
       return { weight, surface, itemName: `Pręt kwadratowy ${ a }x${ b }` }
    },
 
@@ -62,6 +66,7 @@ const MathFunctions = {
       const Pb = 2 * Math.PI * ( a / 2 ) * c
       const surface = Pb / 100000
 
+
       return { weight, surface, itemName: `Rura fi: ${ a }` }
    },
 
@@ -79,6 +84,7 @@ const MathFunctions = {
       const pc = Pb + ( 2 * pp )
 
       const surface = pc / 100000
+
 
       return { weight, surface, itemName: `Pręt okrągły fi: ${ a }` }
    }

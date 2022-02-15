@@ -14,6 +14,7 @@ const itemsController = {
          return res.status( 500 ).json( { msg: "Nie udało się pobrać itemów z listy" } )
       }
    },
+
    addItem: async ( req, res ) =>
    {
       console.log( 'dodaje item' )
@@ -33,6 +34,7 @@ const itemsController = {
          }
       }
    },
+
    deleteItem: async ( req, res ) =>
    {
       try
@@ -45,6 +47,20 @@ const itemsController = {
          return res.status( 500 ).json( { msg: "Błąd przy usuwaniu pozycji do listy" } )
       }
    },
+
+   editItem: async ( req, res ) =>
+   {
+      try
+      {
+         const _id = req.params.id
+         const item = await ItemsModel.findByIdAndUpdate( { _id }, { ...req.body }, { new: true } )
+         return res.status( 200 ).json( { msg: "edytowano element", item } )
+      } catch ( error )
+      {
+         console.log( error )
+         return res.status( 500 ).json( { msg: "Bląd przy edytowaniu elementu" } )
+      }
+   }
 }
 
 

@@ -13,7 +13,6 @@ import { useSelector } from 'react-redux';
 export default function Kalkulator ()
 {
    const weight = useSelector( state => state.kalkulatorPageReducer.weight )
-   console.log( weight )
 
    return (
       <>
