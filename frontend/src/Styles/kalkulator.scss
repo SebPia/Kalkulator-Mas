@@ -195,6 +195,7 @@ aside{
 
             .hiddenlist{
                // reset buttonow
+               max-height:100%;
                button{
                   all:unset;
                }
@@ -232,6 +233,10 @@ aside{
                         text-align: center;
                         font-size:20px;
                   }
+
+                     .item_button:hover{
+                        cursor:pointer;
+                     }
                  }
 
 
