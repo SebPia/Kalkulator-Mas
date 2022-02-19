@@ -10,8 +10,9 @@ const kalkulatorPageActions = {
 
    setActiveList: ( id ) => ( { type: "ACTIVE_LIST", id } ),
    setActiveListItems: ( payload ) => ( { type: "ACTIVE_LIST_ITEMS", payload } ),
-   updateActiveListItems: ( payload ) => ( { type: "UPDATE_ACTIVE_LIST_ITEMS", payload } ),
-   deleteItemFromList: ( item_id ) => ( { type: "DELETE_ITEM_FROM_LIST", item_id } )
+   updateActiveListItems: ( payload ) => ( { type: "UPDATE_ACTIVE_LIST_ITEMS_AMOUNT", payload } ),
+   deleteItemFromList: ( item_id ) => ( { type: "DELETE_ITEM_FROM_LIST", item_id } ),
+   addItemToList: ( payload ) => ( { type: "ADD_ITEM_TO_LIST", payload } )
 }
 
 export default kalkulatorPageActions
