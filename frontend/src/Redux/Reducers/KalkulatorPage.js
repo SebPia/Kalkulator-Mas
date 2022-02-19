@@ -33,7 +33,6 @@ const kalkulatorPageReducer = ( state = INIT_STATE, action ) =>
 
       case 'LIST_DELETE':
          let newList = [...state.lists].filter( el => el._id !== action.item._id )
-         console.log( newList )
          return { ...state, lists: newList }
 
       case 'ACTIVE_LIST':
@@ -42,11 +41,15 @@ const kalkulatorPageReducer = ( state = INIT_STATE, action ) =>
       case 'ACTIVE_LIST_ITEMS':
          return { ...state, activeListItems: action.payload }
 
-      case 'UPDATE_ACTIVE_LIST_ITEMS':
+      case 'UPDATE_ACTIVE_LIST_ITEMS_AMOUNT':
          return { ...state, activeListItems: state.activeListItems.map( el => el._id === action.payload._id ? el = action.payload : el ) }
 
       case 'DELETE_ITEM_FROM_LIST':
          return { ...state, activeListItems: state.activeListItems.filter( item => item._id !== action.item_id ) }
+
+      case 'ADD_ITEM_TO_LIST':
+         return { ...state, activeListItems: [...state.activeListItems, action.payload] }
+
       default:
          return state;
    }

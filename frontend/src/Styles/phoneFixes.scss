@@ -1,0 +1,32 @@
+@media  (max-width: 1240px){
+
+   .kalkulatorPage_main{
+      width:65vw;
+      margin-left:15px;
+   }
+
+   aside{
+      width:30vw;
+   }
+
+   #Kalkulator-Container{  
+      flex-direction: column;
+      figure{
+         transform:scale(0.7)
+      }
+
+      form, #section_score{
+         width:100%;
+      }
+
+   }
+
+}
+
+
+
+@media  (max-width: 1000px){
+   .KalkulatorMenu{
+      flex-wrap:wrap;
+}
+}

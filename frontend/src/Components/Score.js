@@ -1,7 +1,8 @@
 
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import kalkulatorPageActions from '../Redux/actions/KalkulatorPage';
 
 export default function Score ()
 {
@@ -9,14 +10,16 @@ export default function Score ()
    const weight = useSelector( state => state.kalkulatorPageReducer.weight )
    const surface = useSelector( state => state.kalkulatorPageReducer.surface )
    const itemName = useSelector( state => state.kalkulatorPageReducer.itemName )
+   const view = useSelector( state => state.kalkulatorPageReducer.view )
+
+   const dispatch = useDispatch()
    const [msg, setMsg] = useState( '' )
-   // Api request
 
 
-   const returnMainForm = ( e ) =>
-   {
 
-   }
+
+
+   const returnMainForm = ( e ) => dispatch( kalkulatorPageActions.score_set( { itemName: view, weight: 0, surface: 0 } ) )
 
 
    const addItemToList = async ( e ) =>
@@ -34,6 +37,7 @@ export default function Score ()
 
 
          const response = await axios.post( `/api/items/${ list_id }`, { name, weight, surface, price }, { headers: { Authorization: localStorage.getItem( 'token' ) } } )
+         dispatch( kalkulatorPageActions.addItemToList( response.data.newItem ) )
          setMsg( response.data.msg )
       } catch ( error ) { if ( error ) console.log( error ) }
    }
@@ -49,6 +53,7 @@ export default function Score ()
 
 
          {
+
             lists.length === 0 ? <button disabled style={ { opacity: '0.4' } }> Nie masz list - nie możesz nic do nich dodać</button> :
                <>
                   <div>

@@ -5,6 +5,7 @@ import kalkulatorPageActions from '../Redux/actions/KalkulatorPage';
 
 export default function ListItem ( { id } )
 {
+   const [loader, setLoader] = useState( false )
    const activeListItems = useSelector( state => state.kalkulatorPageReducer.activeListItems )
    const dispatch = useDispatch()
 
@@ -12,11 +13,13 @@ export default function ListItem ( { id } )
    {
       try
       {
+         setLoader( true )
          const item_id = e.target.parentElement.parentElement.parentElement.id
          await axios.delete( `api/items/${ item_id }`, { headers: { Authorization: localStorage.getItem( 'token' ) } } )
          dispatch( kalkulatorPageActions.deleteItemFromList( item_id ) )
 
       } catch ( error ) { { return console.log( error ) } }
+      finally { setLoader( false ) }
 
    }
 
@@ -47,9 +50,11 @@ export default function ListItem ( { id } )
    {
       try
       {
+         setLoader( true )
          const response = await axios.get( `/api/items/${ id }`, { headers: { Authorization: localStorage.getItem( 'token' ) } } )
          dispatch( kalkulatorPageActions.setActiveListItems( response.data ) )
       } catch ( error ) { if ( error ) return console.log( error ) }
+      finally { setLoader( false ) }
    }
 
 
@@ -65,40 +70,45 @@ export default function ListItem ( { id } )
    return (
       <>
          {
-            activeListItems.length > 0 ?
-               activeListItems.map( ( { _id, name, weight, surface, amount, price } ) => (
-                  <li key={ _id } id={ _id }>
-                     <header className='item_header'>
-                        <p className='item_tittle'>{ name }</p>
-                        <nav> <button className="item_button" onClick={ handleDeleteItemFromList }>X</button> </nav>
-                     </header>
 
-                     <section className='item_stats'>
-                        <p>
-                           { ( weight * amount ).toFixed( 2 ) }
-                           <span className='unit'> kg</span>
-                        </p>
+            loader === true ? (
+               <span className='loader' id="hiddenListLoader"></span>
+            ) : (
+               activeListItems.length > 0 ?
+                  activeListItems.map( ( { _id, name, weight, surface, amount, price } ) => (
+                     <li key={ _id } id={ _id }>
+                        <header className='item_header'>
+                           <p className='item_tittle'>{ name }</p>
+                           <nav> <button className="item_button" onClick={ handleDeleteItemFromList }>X</button> </nav>
+                        </header>
 
-                        <p>
-                           { ( surface * amount ).toFixed( 2 ) }
-                           <span className='unit'> m2</span>
-                        </p>
+                        <section className='item_stats'>
+                           <p>
+                              { ( weight * amount ).toFixed( 2 ) }
+                              <span className='unit'> kg</span>
+                           </p>
 
-                        <p>
-                           { ( price * amount ).toFixed( 2 ) }
-                           <span className='unit'> zł</span>
-                        </p>
-                     </section>
+                           <p>
+                              { ( surface * amount ).toFixed( 2 ) }
+                              <span className='unit'> m2</span>
+                           </p>
 
-                     <section className='item_counter'>
-                        <button onClick={ ( e ) => handleAmountChange( e, 'decress' ) }>-</button>
-                        <p className='item_amount' id={ `item_amount${ _id }` }>{ amount }</p>
-                        <button onClick={ ( e ) => handleAmountChange( e, "incress" ) }>+</button>
-                     </section>
-                  </li>
-               ) )
-               :
-               <p>Brak elementów w liście</p>
+                           <p>
+                              { ( price * amount ).toFixed( 2 ) }
+                              <span className='unit'> zł</span>
+                           </p>
+                        </section>
+
+                        <section className='item_counter'>
+                           <button onClick={ ( e ) => handleAmountChange( e, 'decress' ) }>-</button>
+                           <p className='item_amount' id={ `item_amount${ _id }` }>{ amount }</p>
+                           <button onClick={ ( e ) => handleAmountChange( e, "incress" ) }>+</button>
+                        </section>
+                     </li>
+                  ) )
+                  :
+                  <p>Brak elementów w liście</p>
+            )
          }
 
       </>

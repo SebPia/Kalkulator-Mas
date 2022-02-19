@@ -12,7 +12,6 @@ import KatownikIcon from '../Public/KatownikIcon.png'
 export default function Navbar ()
 {
 
-
    const { view_change } = kalkulatorPageActions
    const view = useSelector( state => state.kalkulatorPageReducer.view )
    const dispatch = useDispatch()
@@ -27,13 +26,20 @@ export default function Navbar ()
    ]
 
 
+   const handleClick = ( el ) =>
+   {
+      dispatch( kalkulatorPageActions.score_set( { itemName: view, weight: 0, surface: 0 } ) )
+      return dispatch( view_change( el.view ) )
+   }
+
+
    return (
       <header>
          <nav>
             <ol className='KalkulatorMenu'>
                {
                   KalkulatorMenu.map( el => (
-                     <li onClick={ () => dispatch( view_change( el.view ) ) } className={ view === el.view ? 'active' : null }>
+                     <li onClick={ () => handleClick( el ) } className={ view === el.view ? 'active' : null }>
                         <figure>
                            <figcaption>{ el.tittle }</figcaption>
                            <img src={ el.url } alt={ el.tittle } />

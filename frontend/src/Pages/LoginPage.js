@@ -145,7 +145,7 @@ export default function LoginPage ()
                }
                <input type="submit" className="Buttons" />
 
-               { loader ? <span id="loader"></span> : null }
+               { loader ? <span className="loader"></span> : null }
                { msg !== '' ? <p className="msg">{ msg }</p> : null }
             </form>
          </div>

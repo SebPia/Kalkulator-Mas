@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../Styles/kalkulator.scss'
+import '../Styles/phoneFixes.scss'
 import Picture from '../Components/Picture';
 import NavBar from '../Components/Navbar.js';
 import Form from '../Components/Form.js';
