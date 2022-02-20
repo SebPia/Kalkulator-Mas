@@ -3,6 +3,7 @@
 
 ## This a preview of application.
 ![This is an image](https://i.postimg.cc/SxJjqzDk/Screenshot-2022-02-10-at-11-34-36-React-App.png)
+https://kalkulator-mas.herokuapp.com/
 
 ## Description
 The application was created to help in the price of welding and painting orders. 
