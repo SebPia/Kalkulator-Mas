@@ -8,8 +8,8 @@ https://kalkulator-mas.herokuapp.com/
 ## Description
 The application was created to help in the price of welding and painting orders. 
 There is possibility to add new lists with infinity amount of elements.
-**App still need some Fixes, github files can be not  ** The code may not look very clean, beacose i wrote it in "freestyle" mode. After finish I'll clean up the mess
-**The github version may be outdated, the herok version is up-to-date**
+**App still need some Fixes The code may not look very clean, beacose i wrote it in "freestyle" mode. After finish I'll clean up the mess
+**The github version may be outdated, the herok version is current**
 
 
 ## Technology
